@@ -3,7 +3,7 @@ $(document).ready(function() {
     var possibleWords = ["macarena", "whoomp", "I Will Always Love You", "Losing My Religion", "Smooth",
         "wild night", "do you sleep", "river of dreams", "every morning", "no rain", "unbelievable", "brick",
         "tennessee", "lump", "one week", "boombastic", "wonderwall", "man on the moon", "tears in heaven",
-        "uninvited", "wannabe", "linger", "dont speak", "a girl like you", "", "good vibrations", "secret",
+        "uninvited", "wannabe", "linger", "dont speak", "a girl like you", "good vibrations", "secret",
         "the train", "poison", "epic", "the humpty dance", "black or white", "summertime", "adia", "escapade",
         "connected", "waterfalls", "doo wop that thing", "no diggity", "whats up", "vogue", "fantasy", "believe"
     ];
@@ -24,7 +24,6 @@ $(document).ready(function() {
     var guessingWord = [];
     var wordToMatch;
     var randomWord;
-    // var picToMatch;
     var numGuess;
     var wins = 0;
     var losses = 0;
@@ -60,9 +59,9 @@ $(document).ready(function() {
                     wins++;
                     pauseGame = true;
                     winSound.play();
+                    // Display found word
+                    $("#foundWord").html(guessingWord);
                     // Replace the image
-                    // $('#image>img').replaceWith("<img src = 'possiblePictures[possibleWords.indexOf(randomWord)]' >");
-                    // Play the song of the found word
                     var image1 = document.getElementById("image1");
                     image1.src = possiblePictures[possibleWords.indexOf(randomWord)];
                     updateDisplay();
@@ -128,19 +127,6 @@ $(document).ready(function() {
         console.log(wordToMatch);
         console.log(possibleWords.indexOf(randomWord));
         console.log(possiblePictures[possibleWords.indexOf(randomWord)]);
-        // for (var k = 0, l = possibleWords.length, n = possiblePictures.length; k < l && k < n; k++) {
-        //     if (possibleWords[k] === randomWord) {
-        //         console.log(possiblePictures[k]);
-        //     }
-
-        // Printing -1 because prime number is not found. 
-        // console.log([4, 6, 8, 12].findIndex(isPrime));
-
-        // Printing 2 the index of prime number (7) found. 
-        // console.log([4, 6, 7, 12].findIndex(isPrime));
-        // }
-
-
 
         // Reset word arrays
         guessLetter = [];
